@@ -4,7 +4,7 @@ import json
 def write_json(json_value, json_file_name):
     try:
         base_dir = os.getcwd()
-        temp_dir = os.path.join(base_dir, "10-Python-Llm-Sample/_temp")
+        temp_dir = os.path.join(base_dir, "01-Python-Llm-Sample/_temp")
         os.makedirs(temp_dir, exist_ok=True)
         json_path = os.path.join(temp_dir, json_file_name)
         
