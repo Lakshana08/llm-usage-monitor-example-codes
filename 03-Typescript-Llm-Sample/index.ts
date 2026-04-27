@@ -1,10 +1,54 @@
 import dotenv from "dotenv";
+import path from "path";
 import axios from "axios";
-import fs from "fs";
 import { HumanMessage } from "@langchain/core/messages";
-import { dummy_llm } from "./_llm/model_llm";
+import { saveMetadataToFile } from "./_util/file_ops";
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+
+function getLLM(temperature = 0) {
+  return {
+    async invoke(messages: any[]) {
+      const tokenRes = await axios.post(
+        process.env.AICORE_AUTH_URL!,
+        "grant_type=client_credentials",
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          auth: {
+            username: process.env.AICORE_CLIENT_ID!,
+            password: process.env.AICORE_CLIENT_SECRET!,
+          },
+        }
+      );
+
+      const token = tokenRes.data.access_token;
+
+      const response = await axios.post(
+        `${process.env.AICORE_BASE_URL}/inference/deployments/${process.env.LLM_DEPLOYMENT_ID}/chat/completions?api-version=2023-05-15`,
+        {
+          messages: messages.map((m: any) => ({
+            role: "user",
+            content: m.content,
+          })),
+          temperature,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "AI-Resource-Group": process.env.AICORE_RESOURCE_GROUP!,
+          },
+        }
+      );
+
+      return response.data;
+    },
+  };
+}
+
+const dummy_llm = getLLM(0.2);
 
 /**
  * API URL
@@ -39,13 +83,7 @@ async function main() {
     /**
      * Save metadata to JSON file
      */
-    fs.writeFileSync(
-      "metadata.json",
-      JSON.stringify(metadataObject, null, 2),
-      "utf-8"
-    );
-
-    console.log("metadata.json file created successfully");
+    saveMetadataToFile(metadataObject, "_temp/llm_response.json");
 
     /**
      * Convert to string for API payload
