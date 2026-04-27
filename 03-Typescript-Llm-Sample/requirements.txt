@@ -1,0 +1,6 @@
+@langchain/core
+@langchain/openai
+axios
+dotenv
+typescript
+ts-node
