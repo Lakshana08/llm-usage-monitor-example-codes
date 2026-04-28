@@ -1,0 +1,20 @@
+{
+  "name": "lakshana",
+  "version": "1.0.0",
+  "description": "LangChain TypeScript LLM invoke example",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "dev": "ts-node index.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.4.0",
+    "axios": "^1.8.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.0"
+  }
+}
