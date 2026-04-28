@@ -1,0 +1,23 @@
+{
+  "name": "04-typescript-agent-sample",
+  "version": "1.0.0",
+  "description": "LangGraph TypeScript Agent invoke example",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node --transpile-only index.ts",
+    "dev": "ts-node --transpile-only index.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/langgraph": "^0.2.74",
+    "@langchain/openai": "^0.4.0",
+    "axios": "^1.8.0",
+    "dotenv": "^16.4.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.0"
+  }
+}
