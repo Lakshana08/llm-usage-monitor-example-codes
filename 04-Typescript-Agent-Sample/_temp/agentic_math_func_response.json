@@ -12,7 +12,7 @@
         "content": "{\n  \"instructions\": \"\\nYou have access to math tools.\\nCall only the appropriate tools needed as much it is needed, don't unwantedly call unwanted tools\\njust let the tools do the work, your job is just to select the tools and not to answer on your own, If no tools are needed, dont use any and also dont answer on your own for the prompt\\n\\nTask:\\n1. Multiply the output of sum of 1 and 2 with the greatest number among inputs of 1 and 2, and use that final answer\\nto subract it with the lowest number among inputs of 1 and 2\\n\\nUse tools when needed.\\nReturn only the final number.\\n\"\n}",
         "additional_kwargs": {},
         "response_metadata": {},
-        "id": "992fe22d-6fe0-4c8e-85ad-a6f6f820b563"
+        "id": "443e43a3-7828-4077-8db7-57f716f3972d"
       }
     },
     {
@@ -32,7 +32,7 @@
                 "arguments": "{\"a\": 1, \"b\": 2}",
                 "name": "add"
               },
-              "id": "call_s3uDC3Mz6YvghJT5OhvB2sH0",
+              "id": "call_EWsnLAA7xEBzRvfhkfbgzNTz",
               "type": "function"
             },
             {
@@ -40,7 +40,7 @@
                 "arguments": "{\"a\": 2, \"b\": 1}",
                 "name": "subtract"
               },
-              "id": "call_SdZZ2BxmH3FD9kLjXJUXHzOa",
+              "id": "call_eI3o1HI0YszdIWokD7BiIxwy",
               "type": "function"
             }
           ]
@@ -70,7 +70,7 @@
           },
           "system_fingerprint": "fp_e9b9b028d7"
         },
-        "id": "chatcmpl-DZWYCJNHB7YnoYoLueyH3CL0gQmtP",
+        "id": "chatcmpl-DZXYqWVmjTUgCM74d157hcCoXfHey",
         "tool_calls": [
           {
             "name": "add",
@@ -79,7 +79,7 @@
               "b": 2
             },
             "type": "tool_call",
-            "id": "call_s3uDC3Mz6YvghJT5OhvB2sH0"
+            "id": "call_EWsnLAA7xEBzRvfhkfbgzNTz"
           },
           {
             "name": "subtract",
@@ -88,7 +88,7 @@
               "b": 1
             },
             "type": "tool_call",
-            "id": "call_SdZZ2BxmH3FD9kLjXJUXHzOa"
+            "id": "call_eI3o1HI0YszdIWokD7BiIxwy"
           }
         ],
         "invalid_tool_calls": [],
@@ -118,12 +118,12 @@
       "kwargs": {
         "status": "success",
         "content": "{\"type\":\"success\",\"response_text\":3}",
-        "tool_call_id": "call_s3uDC3Mz6YvghJT5OhvB2sH0",
+        "tool_call_id": "call_EWsnLAA7xEBzRvfhkfbgzNTz",
         "name": "add",
         "metadata": {},
         "additional_kwargs": {},
         "response_metadata": {},
-        "id": "2b5a3f56-264b-4cc5-b49b-f708943ed5e6"
+        "id": "bfaf459f-53f2-4fee-a0ff-03303edb6e78"
       }
     },
     {
@@ -137,12 +137,12 @@
       "kwargs": {
         "status": "success",
         "content": "[1,\"abc\"]",
-        "tool_call_id": "call_SdZZ2BxmH3FD9kLjXJUXHzOa",
+        "tool_call_id": "call_eI3o1HI0YszdIWokD7BiIxwy",
         "name": "subtract",
         "metadata": {},
         "additional_kwargs": {},
         "response_metadata": {},
-        "id": "45f9ebb2-9447-4376-9158-42c076a0519e"
+        "id": "e0c775c7-3d27-4e8a-83d0-707519a05a30"
       }
     },
     {
@@ -154,23 +154,15 @@
         "AIMessage"
       ],
       "kwargs": {
-        "content": "I'm sorry, there seems to be some confusion here. Let me try again.",
+        "content": "",
         "additional_kwargs": {
           "tool_calls": [
             {
               "function": {
-                "arguments": "{\"a\": 1, \"b\": 2}",
-                "name": "add"
+                "arguments": "{\"a\":3,\"b\":2}",
+                "name": "multiply"
               },
-              "id": "call_3WkPiJZ8VBN0bHngsbXzSvjO",
-              "type": "function"
-            },
-            {
-              "function": {
-                "arguments": "{\"a\": 2, \"b\": 1}",
-                "name": "subtract"
-              },
-              "id": "call_nOwxFkQ1NRbfb7X1Z185Tgju",
+              "id": "call_LExzPdfKr8hAsIqBHYosgmPC",
               "type": "function"
             }
           ]
@@ -178,13 +170,13 @@
         "response_metadata": {
           "tokenUsage": {
             "promptTokens": 338,
-            "completionTokens": 69,
-            "totalTokens": 407
+            "completionTokens": 18,
+            "totalTokens": 356
           },
           "finish_reason": "tool_calls",
           "model_name": "gpt-4o-2024-08-06",
           "usage": {
-            "completion_tokens": 69,
+            "completion_tokens": 18,
             "completion_tokens_details": {
               "accepted_prediction_tokens": 0,
               "audio_tokens": 0,
@@ -196,36 +188,27 @@
               "audio_tokens": 0,
               "cached_tokens": 0
             },
-            "total_tokens": 407
+            "total_tokens": 356
           },
           "system_fingerprint": "fp_e9b9b028d7"
         },
-        "id": "chatcmpl-DZWYDSKsyLx7wutQzV3GUO9NjXCNG",
+        "id": "chatcmpl-DZXYqCyIfjrLpZ1GCLzk8pQeN0h3b",
         "tool_calls": [
           {
-            "name": "add",
+            "name": "multiply",
             "args": {
-              "a": 1,
+              "a": 3,
               "b": 2
             },
             "type": "tool_call",
-            "id": "call_3WkPiJZ8VBN0bHngsbXzSvjO"
-          },
-          {
-            "name": "subtract",
-            "args": {
-              "a": 2,
-              "b": 1
-            },
-            "type": "tool_call",
-            "id": "call_nOwxFkQ1NRbfb7X1Z185Tgju"
+            "id": "call_LExzPdfKr8hAsIqBHYosgmPC"
           }
         ],
         "invalid_tool_calls": [],
         "usage_metadata": {
-          "output_tokens": 69,
+          "output_tokens": 18,
           "input_tokens": 338,
-          "total_tokens": 407,
+          "total_tokens": 356,
           "input_token_details": {
             "audio": 0,
             "cache_read": 0
@@ -247,32 +230,13 @@
       ],
       "kwargs": {
         "status": "success",
-        "content": "{\"type\":\"success\",\"response_text\":3}",
-        "tool_call_id": "call_3WkPiJZ8VBN0bHngsbXzSvjO",
-        "name": "add",
+        "content": "[6,\"xyz\"]",
+        "tool_call_id": "call_LExzPdfKr8hAsIqBHYosgmPC",
+        "name": "multiply",
         "metadata": {},
         "additional_kwargs": {},
         "response_metadata": {},
-        "id": "e56cc42c-380a-47e0-aea6-fb75d3e95989"
-      }
-    },
-    {
-      "lc": 1,
-      "type": "constructor",
-      "id": [
-        "langchain_core",
-        "messages",
-        "ToolMessage"
-      ],
-      "kwargs": {
-        "status": "success",
-        "content": "[1,\"abc\"]",
-        "tool_call_id": "call_nOwxFkQ1NRbfb7X1Z185Tgju",
-        "name": "subtract",
-        "metadata": {},
-        "additional_kwargs": {},
-        "response_metadata": {},
-        "id": "be2a9fcf-17ed-4b24-8e01-1ce8f1149662"
+        "id": "cdbad2cd-ae51-495a-a43b-0b945c563675"
       }
     },
     {
@@ -284,78 +248,61 @@
         "AIMessage"
       ],
       "kwargs": {
-        "content": "It seems there was an error in the previous tool call. Let me try that again.",
+        "content": "",
         "additional_kwargs": {
           "tool_calls": [
             {
               "function": {
-                "arguments": "{\"a\": 1, \"b\": 2}",
-                "name": "add"
-              },
-              "id": "call_ZWbIPCXN53HN41ShxOGy3HRU",
-              "type": "function"
-            },
-            {
-              "function": {
-                "arguments": "{\"a\": 2, \"b\": 1}",
+                "arguments": "{\"a\":6,\"b\":1}",
                 "name": "subtract"
               },
-              "id": "call_AK2NQkg1T2d65QuYizkfIP3y",
+              "id": "call_Pzk4NZlgCWvTQauR9J1JEMmS",
               "type": "function"
             }
           ]
         },
         "response_metadata": {
           "tokenUsage": {
-            "promptTokens": 418,
-            "completionTokens": 71,
-            "totalTokens": 489
+            "promptTokens": 367,
+            "completionTokens": 18,
+            "totalTokens": 385
           },
           "finish_reason": "tool_calls",
           "model_name": "gpt-4o-2024-08-06",
           "usage": {
-            "completion_tokens": 71,
+            "completion_tokens": 18,
             "completion_tokens_details": {
               "accepted_prediction_tokens": 0,
               "audio_tokens": 0,
               "reasoning_tokens": 0,
               "rejected_prediction_tokens": 0
             },
-            "prompt_tokens": 418,
+            "prompt_tokens": 367,
             "prompt_tokens_details": {
               "audio_tokens": 0,
               "cached_tokens": 0
             },
-            "total_tokens": 489
+            "total_tokens": 385
           },
           "system_fingerprint": "fp_e9b9b028d7"
         },
-        "id": "chatcmpl-DZWYEweVOzOrzOY9UQoxK7cWLYyG1",
+        "id": "chatcmpl-DZXYrHurwc9mBjPm6PGM4y3Qf4FWY",
         "tool_calls": [
-          {
-            "name": "add",
-            "args": {
-              "a": 1,
-              "b": 2
-            },
-            "type": "tool_call",
-            "id": "call_ZWbIPCXN53HN41ShxOGy3HRU"
-          },
           {
             "name": "subtract",
             "args": {
-              "a": 2,
+              "a": 6,
               "b": 1
             },
             "type": "tool_call",
-            "id": "call_AK2NQkg1T2d65QuYizkfIP3y"
+            "id": "call_Pzk4NZlgCWvTQauR9J1JEMmS"
           }
         ],
         "invalid_tool_calls": [],
         "usage_metadata": {
-          "output_tokens": 71,
-          "input_tokens": 418,
-          "total_tokens": 489,
+          "output_tokens": 18,
+          "input_tokens": 367,
+          "total_tokens": 385,
           "input_token_details": {
             "audio": 0,
             "cache_read": 0
@@ -377,32 +324,13 @@
       ],
       "kwargs": {
         "status": "success",
-        "content": "{\"type\":\"success\",\"response_text\":3}",
-        "tool_call_id": "call_ZWbIPCXN53HN41ShxOGy3HRU",
-        "name": "add",
-        "metadata": {},
-        "additional_kwargs": {},
-        "response_metadata": {},
-        "id": "c4a26f91-80e4-40cc-a26b-38770e94388b"
-      }
-    },
-    {
-      "lc": 1,
-      "type": "constructor",
-      "id": [
-        "langchain_core",
-        "messages",
-        "ToolMessage"
-      ],
-      "kwargs": {
-        "status": "success",
-        "content": "[1,\"abc\"]",
-        "tool_call_id": "call_AK2NQkg1T2d65QuYizkfIP3y",
+        "content": "[5,\"abc\"]",
+        "tool_call_id": "call_Pzk4NZlgCWvTQauR9J1JEMmS",
         "name": "subtract",
         "metadata": {},
         "additional_kwargs": {},
         "response_metadata": {},
-        "id": "42962919-ea68-44bf-8024-32bfec45795c"
+        "id": "38596162-2f97-4b65-87a1-7a56823fa260"
       }
     },
     {
@@ -414,13 +342,13 @@
         "AIMessage"
       ],
       "kwargs": {
-        "content": "1",
+        "content": "5",
         "additional_kwargs": {},
         "response_metadata": {
           "tokenUsage": {
-            "promptTokens": 498,
+            "promptTokens": 396,
             "completionTokens": 3,
-            "totalTokens": 501
+            "totalTokens": 399
           },
           "finish_reason": "stop",
           "model_name": "gpt-4o-2024-08-06",
@@ -432,22 +360,22 @@
               "reasoning_tokens": 0,
               "rejected_prediction_tokens": 0
             },
-            "prompt_tokens": 498,
+            "prompt_tokens": 396,
             "prompt_tokens_details": {
               "audio_tokens": 0,
               "cached_tokens": 0
             },
-            "total_tokens": 501
+            "total_tokens": 399
           },
           "system_fingerprint": "fp_e9b9b028d7"
         },
-        "id": "chatcmpl-DZWYFnQXutklNA6rjEDvFns1phhrf",
+        "id": "chatcmpl-DZXYsFv6rxwENnq8cbe721mBtMu5D",
         "tool_calls": [],
         "invalid_tool_calls": [],
         "usage_metadata": {
           "output_tokens": 3,
-          "input_tokens": 498,
-          "total_tokens": 501,
+          "input_tokens": 396,
+          "total_tokens": 399,
           "input_token_details": {
             "audio": 0,
             "cache_read": 0

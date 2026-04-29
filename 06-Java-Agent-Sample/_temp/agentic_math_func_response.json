@@ -1,0 +1,67 @@
+{
+  "messages" : [ {
+    "role" : "user",
+    "content" : "{\"instructions\":\"You have access to math tools.\\nCall only the appropriate tools needed as much it is needed, don't unwantedly call unwanted tools\\njust let the tools do the work, your job is just to select the tools and not to answer on your own, If no tools are needed, dont use any and also dont answer on your own for the prompt\\n\\nTask:\\n1. Multiply the output of sum of 1 and 2 with the greatest number among inputs of 1 and 2, and use that final answer \\nto subract it with the lowest number among inputs of 1 and 2\\n\\nUse tools when needed.\\nReturn only the final number.\\n\"}"
+  }, {
+    "annotations" : [ ],
+    "content" : null,
+    "refusal" : null,
+    "role" : "assistant",
+    "tool_calls" : [ {
+      "function" : {
+        "arguments" : "{\"a\": 1, \"b\": 2}",
+        "name" : "add"
+      },
+      "id" : "call_7VU1S3DPKazYQ31NWl0TcLvJ",
+      "type" : "function"
+    }, {
+      "function" : {
+        "arguments" : "{\"a\": 1, \"b\": 2}",
+        "name" : "add"
+      },
+      "id" : "call_ORyccwOYpt0sUOnmGYD7vIin",
+      "type" : "function"
+    } ]
+  }, {
+    "role" : "tool",
+    "tool_call_id" : "call_7VU1S3DPKazYQ31NWl0TcLvJ",
+    "content" : "{\"type\":\"success\",\"response_text\":3}"
+  }, {
+    "role" : "tool",
+    "tool_call_id" : "call_ORyccwOYpt0sUOnmGYD7vIin",
+    "content" : "{\"type\":\"success\",\"response_text\":3}"
+  }, {
+    "annotations" : [ ],
+    "content" : null,
+    "refusal" : null,
+    "role" : "assistant",
+    "tool_calls" : [ {
+      "function" : {
+        "arguments" : "{\"a\": 3, \"b\": 2}",
+        "name" : "multiply"
+      },
+      "id" : "call_xXkRKYzRIdqMTpc4BNKIEp8p",
+      "type" : "function"
+    }, {
+      "function" : {
+        "arguments" : "{\"a\": 3, \"b\": 1}",
+        "name" : "subtract"
+      },
+      "id" : "call_cu7U6nJyPI8UKxeBb1fNBsCD",
+      "type" : "function"
+    } ]
+  }, {
+    "role" : "tool",
+    "tool_call_id" : "call_xXkRKYzRIdqMTpc4BNKIEp8p",
+    "content" : "[6,\"xyz\"]"
+  }, {
+    "role" : "tool",
+    "tool_call_id" : "call_cu7U6nJyPI8UKxeBb1fNBsCD",
+    "content" : "[2,\"abc\"]"
+  }, {
+    "annotations" : [ ],
+    "content" : "2",
+    "refusal" : null,
+    "role" : "assistant"
+  } ]
+}
