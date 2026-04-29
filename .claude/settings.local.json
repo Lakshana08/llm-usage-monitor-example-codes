@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(where java *)"
+      "Bash(where java *)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:langgraph4j.github.io)",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:mvnrepository.com)",
+      "WebFetch(domain:central.sonatype.com)",
+      "WebFetch(domain:docs.langchain4j.dev)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
