@@ -19,7 +19,9 @@ public class Main {
 
     static Dotenv dotenv = Dotenv.configure().directory("../").load();
     static ObjectMapper mapper = new ObjectMapper();
-    static HttpClient client = HttpClient.newHttpClient();
+    static HttpClient client = HttpClient.newBuilder()
+        .followRedirects(HttpClient.Redirect.ALWAYS)
+        .build();
 
     @FunctionalInterface
     interface LLM {

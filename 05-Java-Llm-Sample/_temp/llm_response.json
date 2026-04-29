@@ -1,11 +1,5 @@
 {
   "choices" : [ {
-    "content_filter_result" : {
-      "error" : {
-        "code" : "content_filter_error",
-        "message" : "The contents are not filtered"
-      }
-    },
     "finish_reason" : "stop",
     "index" : 0,
     "logprobs" : null,
@@ -16,8 +10,8 @@
       "role" : "assistant"
     }
   } ],
-  "created" : 1777377784,
-  "id" : "chatcmpl-DZbRYcHB4zG5Hcj0GlY1WbzwWG8Ld",
+  "created" : 1777442481,
+  "id" : "chatcmpl-DZsH3KKgzIc9VKRYZuYJ1AfbXBzVz",
   "model" : "gpt-4o-2024-08-06",
   "object" : "chat.completion",
   "system_fingerprint" : "fp_e9b9b028d7",
